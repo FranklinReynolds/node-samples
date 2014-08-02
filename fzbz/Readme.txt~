@@ -1,0 +1,13 @@
+Programmer interviews... Sigh. 
+
+I know we need them but they seem like a pretty bad way to choose programmers. By far, the most effective way to find good people is to have other good people recommend them. This is the best way to avoid false negatives and false positives.
+
+The current fashion involves puzzles, programming tasks and similar stuff that seems to be, if not useless, then at least not very effective. I have been in this business for over 20 years and I think the current dependency on puzzles or programming problems is a bad proctice. In my experience the best interviews encourage the candidate to describe their work in sufficient breadth and detail that the interviewer can form an opinion about the candidate's skills and personality.
+
+Assuming the interviewer only has 60 minutes or less to form an opinion about a candidate, time spent on a programming puzzle is a waste. It is hard to believe, but I have been asked to solve the fizzbuzz problem. Fizzbuzz is a problem sooo simple that my grandmother, who never knowingly used a computer and has been dead for many years, could write it. 
+
+A fizzbuzz programm prints the numbers from 1 to 100. For multiples of print "Fizz" instead of the number. For multiples of 5 print "Buzz" and for multiples of 3 and 5 print "FizzBuzz".
+
+Lots of people are uncomfortable being interviewed. If someone cannot solve fizzbuzz during an interview, it is more likely that the candidate is frazzled than they really can not solve the problem. The same is true for implementing linked lists or merge sort, etc. 
+
+I am not trying to say that linked lists or sorting algorithms are as trivial as fizzbuzz. I am saying that almost anyone with an undergraduate degree in CS knows how to write simple programs. If you really want to see their code, ask them to bring in samples they can discuss during the interview.
