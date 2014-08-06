@@ -1,11 +1,15 @@
+// Program: testrb.js
+// Author: Franklin Reynolds
+// Description: Script to test red/black tree module
+
 var a = 0;
+
+// import module
 var rb = require("./rb");
 var nrb = require("./rb").Rbtree;
 
 // input values for the tree
 var inbuf = [12, 4, 5, 987, 590, 789, 232, 87, 35, 21, 512, 1, 40, 41, 42, 43, 44, 45, 567, 100, 110, 190, 180, 150, 577, 310, 88, 99, 401, 502, 489,46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68,69, 70, 455];
-//var inbuf = [12, 4, 5, 987, 23];
-//var inbuf = [12, 4, 5, 987, 23, 789, 24, 232];
 
 // convenience function for printing to stdout
 function stdout_w( outbuf ) {
@@ -59,7 +63,7 @@ function testdelete( tval ) {
     }
 }
 
-
+// delete a bunch of values and make sure the tree is not broken
 testdelete( 455 );
 testdelete( 50 );
 testdelete( 21 );
