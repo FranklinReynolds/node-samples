@@ -1,7 +1,12 @@
 /*
  * name: rb.js
  * author: FDReynolds
- * description: javascript implementation of red-black trees
+ * description: javascript/node.js implementation of red-black trees
+ *
+ *  At the bottom of the file a red/black tree object "class" is created
+ *  and exported so that it can be used as a "module" in other programs.
+ *
+ *  Red/Black trees are a type of balanced binary tree. 
  *
  *  The Following Constraints Must Be Met For A Correct Red/Black Tree:
  *  1. Each node is either red or black.
@@ -191,7 +196,7 @@ function insert( cnode, val ) {
 	this.rbRoot.color = BLACK;
 	return;
     }
-    debugger;
+
     /* try to descend tree, else create new node */
     if (cnode.value > val) {
 	if (cnode.left == null) {
@@ -238,7 +243,6 @@ function removenode( cvalue) {
     // dnode is the node we have to delete and it should have at least one null child...
     if ((dnode.left != null) && (dnode.right != null)) {
 	stdout_w("dnode has too many real children!!\n");
-	debugger;
     }
 
     // if dnode is RED then replace it with BLACK child - which should be null
@@ -256,7 +260,7 @@ function removenode( cvalue) {
 	return;
     }
 
-    // if dnode is BLACK (already established!) and it has a RED child...not sure this is right.
+    // if dnode is BLACK (already established!) and it has a RED child
     if ( ( dnode.left != null ) && ( dnode.left.color == RED ) ) {
 	dnode.value = dnode.left.value;
 	dnode.left = null;
@@ -290,7 +294,7 @@ function fixtree( dnode, curtree ) {
 	curtree.rbRoot = dnode;
 	return;
     }
-    debugger;
+
     // if sibling is RED, swap parent and sib colors and rotate parent
     // first, set snode to the sibling node
     var snode = (dnode.parent.left != dnode) ? dnode.parent.left : dnode.parent.right;
@@ -357,6 +361,22 @@ function fixtree( dnode, curtree ) {
     }
 }
 
+// find and return the node whose value matches "val"
+function findnode ( cnode, val ) {
+    var temp = null;
+
+    if (cnode == null) return null;
+    if (cnode.value == val) return cnode;
+
+    temp = findnode( cnode.left, val );
+    if ( temp != null )  return temp;
+
+    temp = findnode( cnode.right, val );
+    if ( temp != null ) return temp;
+
+    return temp;
+}
+
 /*  The Following Constraints Must Be Met For A Correct Red/Black Tree:
  *  1. Each node is either red or black.
  *  2. The root node is black.
@@ -375,22 +395,6 @@ function verifytree(rbRoot) {
     // not worried about (3) 'cuz NULLs are considered black and all leaves
     // are NULL
     if ( walktree( rbRoot ) != null ) return true; else return false;
-}
-
-// find and return the node whose value matches "val"
-function findnode ( cnode, val ) {
-    var temp = null;
-
-    if (cnode == null) return null;
-    if (cnode.value == val) return cnode;
-
-    temp = findnode( cnode.left, val );
-    if ( temp != null )  return temp;
-
-    temp = findnode( cnode.right, val );
-    if ( temp != null ) return temp;
-
-    return temp;
 }
 
 // look for violation of RB tree rules. Return null is error encountered.
