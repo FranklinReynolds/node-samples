@@ -1,7 +1,7 @@
 node-samples
 ============
 
-node.js (javascript) programs
+A handful of javascript (node.js) programs
 
    fzbz: interview programming problems like fizzbuzz 
 
